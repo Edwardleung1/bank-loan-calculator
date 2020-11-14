@@ -8,58 +8,88 @@
   <title>Loan Calculator</title>
 </head>
 <body class="bg-dark">
+  <h1 class="text-uppercase text-center text-white pt-5 mt-5">
+    Bank Loan Calculator
+  </h1>
+  <p class="text-center text-white">
+    Use the tool below to calculate your interest on a bank loan.
+  </p>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 mx-auto">
+      <div class="col-lg-6 mx-auto">
         <div class="card card-body text-center mt-5">
-          <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+          <h1 class="pb-3 text-uppercase">
+            Calculate <i class="fas fa-money-bill-wave"></i>
+          </h1>
           <form id="loan-form">
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">$</span>
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-pound-sign"></i></span>
+                </div>
                 <input type="number" class="form-control" id="amount"
-                placeholder="Loan Amount">
+                placeholder="Loan Amount" step="0.01">
               </div>
             </div>
+
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">%</span>
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-percentage"></i></span>
+                </div>
                 <input type="number" class="form-control" id="interest"
-                placeholder="Interest">
+                placeholder="Interest" step="any">
               </div>
             </div>
+
             <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                </div>
               <input type="number" class="form-control" id="years" placeholder="Years To Repay">
+              </div>
             </div>
-            <div class="form-group">
+
+            <div class="form-group pt-3">
               <input type="submit" value="Calculate" class="btn btn-dark btn-block">
             </div>
           </form>
-          <!-- LOADER HERE -->
+
+          <!-- LOADER -->
           <div id="loading">
             <img src="img/loading.gif" alt="loading">
           </div>
+
           <!-- RESULTS -->
-          <div id="results" class="pt-4">
+          <div id="results" class="pt-5">
             <h5>Results</h5>
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">Monthly Payment</span>
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Monthly Payment</span>
+                </div>
                 <input type="number" class="form-control" id="monthly-payment"
-                disabled>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-addon">Total Payment</span>
-                <input type="number" class="form-control" id="total-payment"
                 disabled>
               </div>
             </div>
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">Total Interest</span>
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Total Payment</span>
+                </div>
+                <input type="number" class="form-control" id="total-payment"
+                disabled>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Total Interest</span>
+                </div>
                 <input type="number" class="form-control" id="total-interest"
                 disabled>
               </div>
@@ -70,9 +100,7 @@
     </div>
   </div>
 
-
-
-    <script
+  <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
