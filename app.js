@@ -6,8 +6,8 @@ document.getElementById('loan-form').addEventListener('submit', function(e) {
   // Show loader
   document.getElementById('loading').style.display = 'block';
 
-  // Calculate results after 2 seconds
-  setTimeout(calculateResults, 2000);
+  // Calculate results after 1.5 seconds
+  setTimeout(calculateResults, 1500);
 
   e.preventDefault();
 });
@@ -22,20 +22,15 @@ function calculateResults() {
   const totalPayment = document.getElementById('total-payment');
   const totalInterest = document.getElementById('total-interest');
   
-  // Amount value in float
+  // Turn into decimal
   const principal = parseFloat(amount.value);
-
-  // Calculate interest
   const calculatedInterest = parseFloat(interest.value) / 100 / 12;
-
-  // Calculate payment
   const calculatePayments = parseFloat(years.value) * 12;
 
-  // Calculate monthly payment
+  // Monthly payment
   const x = Math.pow(1 + calculatedInterest, calculatePayments);
-  const monthly = (principal*x*calculatedInterest) / (x-1);
+  const monthly = (principal * x * calculatedInterest) / (x - 1);
 
-  // Check if monthly value isFinite number
   if (isFinite(monthly)) {
     monthlyPayment.value = monthly.toFixed(2);
     totalPayment.value = (monthly * calculatePayments).toFixed(2);
@@ -52,7 +47,7 @@ function calculateResults() {
   }
 }
 
-// Show error function
+// Show error 
 function showError(error) {
   // Hide results
   document.getElementById('results').style.display = 'none';
@@ -76,8 +71,8 @@ function showError(error) {
   // Insert error above heading
   card.insertBefore(errorDiv, heading);
 
-  // Clear error after 3 seconds
-  setTimeout(clearError, 3000);
+  // Clear error after 2 seconds
+  setTimeout(clearError, 2000);
 }
 
 // Clear error function
